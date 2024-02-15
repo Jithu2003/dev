@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upcoming Events</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:white;
+  }
+  .timeline {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 80vh;
+  }
+  .line {
+    position: absolute;
+    right:1%;
+    top:10%;
+    width: 5px;
+    height: 105%;
+    background-color:#3B9EBF;
+    transform: translateX(-50%);
+  }
+  .event {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: centre;
+  }
+  .event img {
+    width: 50px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    right:80%
+  }
+.event:nth-child(even)::before {
+    content: attr(data-event); /* Content from data-event attribute */
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    background-color: #3B9EBF;
+    border: 1px solid #3B9EBF;
+    margin-right:280px;/* Adjust distance from calendar image */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Rectangle on the left of 1st, 3rd, and 5th calendar images */
+  .event:nth-child(odd)::after {
+    content: attr(data-event); /* Content from data-event attribute */
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    background-color:#3B9EBF;
+    border: 1px solid #3B9EBF;
+    margin-left:280px; /* Adjust distance from calendar image */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Rectangle on the right of 2nd, 4th, and 6th calendar images */
+  
+</style>
+</head>
+<body>
+  
+
+<div class="timeline">
+  <div class="line"></div>
+  <!-- Calculate the position for each image -->
+  <!-- Total number of images: 6 -->
+  <!-- Total spacing: 80vh (100vh - 20vh) -->
+  <!-- Spacing between images: 80vh / (6 - 1) = 16.67vh -->
+  <!-- Each image takes up 20vh of space -->
+  <!-- Calculate positions based on index -->
+  <div class="event" style="top: 10%; left: calc(50% - 30px);" data-event="Replicate Realm" >
+    <img src="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Events\calender.jpg" alt="Calendar">
+  </div>
+  <div class="event" style="top: 30%; left: calc(50% + -5px);" data-event="Papyrus-29/02/2024" >
+    <img src="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Events\calender.jpg" alt="Calendar">
+  </div>
+  <div class="event" style="top: 50%; left: calc(50% - 30px);"  data-event="Hack In Time-11/03/2024">
+    <img src="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Events\calender.jpg" alt="Calendar">
+  </div>
+  <div class="event" style="top: 70%; left: calc(50% + -5px);" data-event="Guest Lecture & Award Ceremony-18/03/2024" >
+    <img src="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Events\calender.jpg" alt="Calendar">
+  </div>
+  <div class="event" style="top: 90%; left: calc(50% - 30px);" data-event="Project Expo-01/04/2024">
+    <img src="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Events\calender.jpg" alt="Calendar">
+  </div>
+  <div class="event" style="top: 110%; left: calc(50% + -5px);" data-event="Valedictory-27/04/2024">
+    <img src="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Events\calender.jpg" alt="Calendar">
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: montserrat;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #16345d, #235f84);
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .logo img {
+            max-height: 60px;
+            margin-right: 20px;
+            border-radius: 50%; /* This will make the image round */
+        }
+
+        .navbar h1 {
+            margin: 0;
+            margin-right: auto;
+            
+        }
+
+        .navbar-links {
+            margin-left: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            word-spacing: 10px;
+        }
+
+        .navbar-links a {
+            margin-right: 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .bg-overlay::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.9; /* adjust opacity as needed */
+        }
+
+        /* Added code from first snippet */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: flex-start; /* Align to left */
+        }
+
+        .swipe {
+            position: relative;
+            width: fit-content;
+            margin-right: auto; /* Align to left */
+            margin-left: 20px; /* Add some space between the text and the left edge */
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 100%;
+                width: 0%;
+                height: 100%;
+                background-color: white;
+                animation: swipe 1.5s ease-out 1s forwards;
+            }
+            &--delay {
+                &::after {
+                    background-color: #FFF;
+                    animation-delay: 1.5s;
+                }
+            }
+        }
+
+        p {
+            display: block;
+            color: #FFF;
+            font-size: 60px;
+            line-height: 0.5;
+            font-weight: 400;
+            padding: 15px 25px;
+            opacity: 0;
+            animation: fade 0.01s ease-out 1.75s forwards;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 150px;
+        }
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes swipe {
+            0% {
+                right: 100%;
+                left: 0;
+                width: 0%;
+            }
+            50% {
+                right: 0;
+                left: 0;
+                width: 100%;
+            }
+            100% {
+                right: 0;
+                left: 100%;
+                width: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar bg-overlay">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Objectives\index.html">Ojectives</a>
+            <a href="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\Events\events2.html">UpcomingEvents</a>
+            <a href="C:\Users\nyoge\OneDrive\Desktop\Dev Dynasty\About\about2.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="swipe">
+            <p>Hi!</p>
+        </div>
+        <div class="swipe swipe--delay">
+            <p>Welcome To DevDynasty</p>
+        </div>
+    </div>
+</body>
+</html>
